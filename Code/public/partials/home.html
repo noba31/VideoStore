@@ -1,0 +1,20 @@
+<h1>Home Page</h1>
+
+<div class = "form-search">
+	<input type = "text" placeholder = "Search" name = "search" ng-model = "searchText">
+	<button type = "submit"><i class = "glyphicon glyphicon-search"></i></button>
+</div>
+<p>
+	<a href = "/#/add-video">Add a Video</a>
+</p>
+<ul>
+	<li ng-repeat='video in videos | filter:searchText'>
+		<a href = "/#/video/{{video._id}}">
+			{{video.title}}
+			<img src="http://localhost:3000/images/{{video._id}}.jpg" width = "150" height = "200">
+		</a>
+		<a href = "/#video/delete/{{video._id}}">
+			<i class = "glyphicon glyphicon-remove"></i>
+		</a>
+	</li>
+</ul>
